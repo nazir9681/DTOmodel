@@ -1,0 +1,37 @@
+<router-outlet></router-outlet>
+<router-outlet></router-outlet>
+<div class="container mt-5">
+    <div class="row">
+        
+        <div class="col-lg-6">
+            <div class="right" *ngIf="payments">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Card Number</th>
+                        <th scope="col">Card Holder Name</th>
+                        <th scope="col">Expiration Date</th>
+                        <th scope="col">CVV</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let payment of payments | async">
+                        <td>{{ payment.creditCardNumber }}</td>
+                        <td>{{ payment.cardHolderName }}</td>
+                        <td>{{ payment.expirationDate }}</td>
+                        <td>{{ payment.securityCode }}</td>
+                        <td>{{ payment.amount }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+        </div>
+        <div class="col-lg-6">
+            <button routerLink="/create-payment" class="btn btn-primary ml-5">Create New Payment</button>
+        </div>
+</div>
+
+
+
+
