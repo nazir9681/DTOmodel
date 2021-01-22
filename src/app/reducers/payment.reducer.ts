@@ -4,7 +4,7 @@ import * as PaymentActions from './../actions/payment.actions'
 
 const initialState: Payment = {
     creditCardNumber: '12354',
-    cardHolderName: 'nazir',
+    cardHolderName: 'Initial',
     expirationDate: '2021-01-23',
     securityCode: '123',
     amount: '200',
