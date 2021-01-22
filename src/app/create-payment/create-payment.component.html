@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
-      <div class="col-lg-6">
-        <div class="container mt-5">
-          <h2>DTO</h2>
+      <div class="col-lg-8">
+        <div class="container mt-5 dto_form_border">
+          <h2 class="text-center" style="color:grey">DTO Payments</h2>
           <form [formGroup]="paymentForm">
             <div class="form-group">
               <label>Credit Card Number</label>
@@ -40,8 +40,8 @@
                  <small *ngIf="amount.errors?.min" class="text-danger">Amount Should more than 0</small>
                </div>
             </div>
-            <button routerLink="/" class="btn btn-primary ">Back</button>
-            <button [class.d-none]="!paymentForm.valid" (click)="onSubmit()" type="submit" class="btn btn-primary ml-5">Submit</button>
+            <button [disabled]="!paymentForm.valid" (click)="onSubmit()" type="submit" class="btn btn-primary">Submit</button>
+            <button routerLink="/" class="btn btn-primary ml-3">Back</button>
           </form>
         </div>
       </div>
